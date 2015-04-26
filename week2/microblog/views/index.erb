@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Microblog</title>
+  </head>
+  <body background="http://wallgans.com/wp-content/uploads/2015/02/pink-feather-twitter-background-abstract-images-sexy-background.jpg">
+    <h1> <center> My Microblog  </center></h1>
+    <a href="/new"><button class='btn btn-danger' style='margin-left:700px'> Add new post </button></a>
+    <% if !:posts.empty? %>
+    <% then %>
+      <% @posts.each do |post| %>
+        <h3><center><a href="/test"><%= post[:title] %></a></center></h3>
+        <h5><center><%= post[:timestamp] %></center></h5>
+        <div class="description"><center>
+          <%= post[:content] %>
+        </center>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="description"><center>
+        No posts here yet!
+      </center>
+      </div>
+    <% end %>
+  </body>
+</html>
